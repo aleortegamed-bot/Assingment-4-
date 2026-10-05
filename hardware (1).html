@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 4: Hardware Evaluation Page</title>
+<style>
+  :root {
+    --board: #0f3d2e;
+    --board-dark: #0a2a20;
+    --trace: #c9a24a;
+    --paper: #f3f6f2;
+    --ink: #14211c;
+    --muted: #4d5f57;
+    --line: #cdd8d1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
+  }
+  header {
+    background: var(--board); color: #eaf2ed; padding: 3rem 1.25rem 2.5rem;
+    border-bottom: 6px solid var(--trace);
+  }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h1, h2, h3, th, .tag { font-family: "Trebuchet MS", Verdana, sans-serif; }
+  h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); margin: 0 0 .4rem; line-height: 1.15; }
+  header p { margin: 0; max-width: 60ch; color: #c5d6cc; }
+  .tag { color: var(--trace); font-size: .9rem; margin-bottom: .6rem; display: block; }
+  main { padding: 2rem 1.25rem 3rem; }
+  h2 { font-size: 1.5rem; margin: 2.5rem 0 .8rem; color: var(--board); }
+  p { max-width: 70ch; }
+
+  .table-scroll { overflow-x: auto; border: 1px solid var(--line); background: #fff; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; }
+  th, td { padding: .85rem 1rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { background: var(--board); color: #fff; font-size: .95rem; }
+  tbody th { background: #e4ece7; color: var(--board); width: 90px; font-size: 1.05rem; }
+  tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+
+  .component {
+    display: grid; grid-template-columns: 220px 1fr; gap: 1.5rem;
+    padding: 1.5rem 0; border-top: 1px solid var(--line); align-items: start;
+  }
+  .component figure { margin: 0; }
+  .component svg { width: 100%; height: auto; display: block; background: var(--board-dark); }
+  figcaption { font-size: .85rem; color: var(--muted); margin-top: .4rem; }
+  .component h3 { margin: 0 0 .4rem; font-size: 1.25rem; color: var(--board); }
+  .component p { margin: .4rem 0; }
+  .spec { color: var(--muted); font-size: .95rem; }
+  footer { background: var(--board-dark); color: #9fb5a9; padding: 1.5rem 1.25rem; font-size: .9rem; }
+  @media (max-width: 640px) { .component { grid-template-columns: 1fr; } }
+  a:focus-visible, th:focus-visible { outline: 3px solid var(--trace); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="tag">Chapter 3 – Evaluating Hardware</span>
+    <h1>Assignment 4: Hardware Evaluation Page</h1>
+    <p>A look at four core components of a computer, what each one does, and why it matters for everyday performance.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Comparison table</h2>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>Component</th><th>Description</th><th>Importance</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">CPU</th>
+          <td>The Central Processing Unit is the "brain" of the computer. It executes program instructions and performs calculations.</td>
+          <td>Determines how fast the computer runs programs and handles multitasking. A slow CPU makes everything feel sluggish.</td>
+        </tr>
+        <tr>
+          <th scope="row">RAM</th>
+          <td>Random Access Memory is fast, temporary memory that holds the data and programs currently in use.</td>
+          <td>More RAM lets you keep more apps and browser tabs open without slowdowns. Its contents are erased when the power is off.</td>
+        </tr>
+        <tr>
+          <th scope="row">SSD</th>
+          <td>A Solid State Drive is permanent storage built from flash memory chips, with no moving parts.</td>
+          <td>Stores the operating system, programs, and files. It boots the computer and opens apps much faster than a traditional hard drive.</td>
+        </tr>
+        <tr>
+          <th scope="row">GPU</th>
+          <td>The Graphics Processing Unit is a processor specialized in drawing images, video, and 3D graphics.</td>
+          <td>Essential for gaming, video editing, 3D design, and AI workloads. It also takes graphics work off the CPU.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Component details</h2>
+
+  <section class="component">
+    <figure>
+      <svg viewBox="0 0 220 160" role="img" aria-label="Illustration of a CPU chip with pins">
+        <g stroke="#c9a24a" stroke-width="3">
+          <path d="M60 28v-14M80 28v-14M100 28v-14M120 28v-14M140 28v-14M160 28v-14"/>
+          <path d="M60 132v14M80 132v14M100 132v14M120 132v14M140 132v14M160 132v14"/>
+          <path d="M52 40h-14M52 60h-14M52 80h-14M52 100h-14M52 120h-14"/>
+          <path d="M168 40h14M168 60h14M168 80h14M168 100h14M168 120h14"/>
+        </g>
+        <rect x="52" y="28" width="116" height="104" rx="6" fill="#2b2f33" stroke="#c9a24a" stroke-width="2"/>
+        <rect x="76" y="48" width="68" height="64" rx="3" fill="#9aa4ab"/>
+        <text x="110" y="86" text-anchor="middle" font-family="Verdana" font-size="18" font-weight="bold" fill="#14211c">CPU</text>
+      </svg>
+      <figcaption>Simplified CPU chip with connection pins.</figcaption>
+    </figure>
+    <div>
+      <h3>CPU – Central Processing Unit</h3>
+      <p>The CPU reads instructions from programs and carries them out, billions of times per second. Its speed depends on the number of cores (how many tasks it can run in parallel) and its clock speed in GHz.</p>
+      <p class="spec"><strong>What to evaluate:</strong> number of cores and threads, clock speed, cache size, and power consumption. Examples: Intel Core i5/i7, AMD Ryzen 5/7.</p>
+    </div>
+  </section>
+
+  <section class="component">
+    <figure>
+      <svg viewBox="0 0 220 160" role="img" aria-label="Illustration of a RAM memory module">
+        <rect x="14" y="52" width="192" height="56" rx="4" fill="#1e7a4f" stroke="#c9a24a" stroke-width="2"/>
+        <g fill="#2b2f33">
+          <rect x="30" y="62" width="32" height="26" rx="2"/><rect x="70" y="62" width="32" height="26" rx="2"/>
+          <rect x="118" y="62" width="32" height="26" rx="2"/><rect x="158" y="62" width="32" height="26" rx="2"/>
+        </g>
+        <g fill="#c9a24a">
+          <rect x="20" y="100" width="6" height="8"/><rect x="32" y="100" width="6" height="8"/><rect x="44" y="100" width="6" height="8"/>
+          <rect x="56" y="100" width="6" height="8"/><rect x="68" y="100" width="6" height="8"/><rect x="80" y="100" width="6" height="8"/>
+          <rect x="92" y="100" width="6" height="8"/><rect x="128" y="100" width="6" height="8"/><rect x="140" y="100" width="6" height="8"/>
+          <rect x="152" y="100" width="6" height="8"/><rect x="164" y="100" width="6" height="8"/><rect x="176" y="100" width="6" height="8"/>
+          <rect x="188" y="100" width="6" height="8"/>
+        </g>
+        <text x="110" y="40" text-anchor="middle" font-family="Verdana" font-size="16" font-weight="bold" fill="#c9a24a">RAM</text>
+      </svg>
+      <figcaption>A DIMM memory module with memory chips.</figcaption>
+    </figure>
+    <div>
+      <h3>RAM – Random Access Memory</h3>
+      <p>RAM acts as the computer's short-term workspace. When you open a program, it is loaded from storage into RAM so the CPU can reach it quickly. When RAM fills up, the system slows down.</p>
+      <p class="spec"><strong>What to evaluate:</strong> capacity (8 GB is a minimum today; 16 GB is comfortable), type (DDR4 or DDR5), and speed in MHz.</p>
+    </div>
+  </section>
+
+  <section class="component">
+    <figure>
+      <svg viewBox="0 0 220 160" role="img" aria-label="Illustration of an SSD drive">
+        <rect x="30" y="34" width="160" height="92" rx="8" fill="#3b4348" stroke="#c9a24a" stroke-width="2"/>
+        <rect x="44" y="48" width="132" height="50" rx="3" fill="#1e7a4f"/>
+        <g fill="#2b2f33">
+          <rect x="52" y="56" width="28" height="34" rx="2"/><rect x="88" y="56" width="28" height="34" rx="2"/>
+          <rect x="124" y="56" width="20" height="34" rx="2"/>
+        </g>
+        <text x="110" y="116" text-anchor="middle" font-family="Verdana" font-size="14" font-weight="bold" fill="#c9a24a">SSD</text>
+      </svg>
+      <figcaption>Solid state drive with flash memory chips.</figcaption>
+    </figure>
+    <div>
+      <h3>SSD – Solid State Drive</h3>
+      <p>An SSD keeps your data even when the computer is off. Because it has no spinning parts, it is faster, quieter, more shock-resistant, and uses less power than a hard disk drive (HDD).</p>
+      <p class="spec"><strong>What to evaluate:</strong> capacity (256 GB to 2 TB), interface (SATA or NVMe), and read/write speeds. NVMe drives are several times faster than SATA.</p>
+    </div>
+  </section>
+
+  <section class="component">
+    <figure>
+      <svg viewBox="0 0 220 160" role="img" aria-label="Illustration of a graphics card with two fans">
+        <rect x="14" y="40" width="192" height="76" rx="6" fill="#2b2f33" stroke="#c9a24a" stroke-width="2"/>
+        <g fill="#14211c" stroke="#9aa4ab" stroke-width="2">
+          <circle cx="70" cy="78" r="26"/><circle cx="150" cy="78" r="26"/>
+        </g>
+        <g stroke="#9aa4ab" stroke-width="3" stroke-linecap="round">
+          <path d="M70 58v40M50 78h40M56 64l28 28M84 64L56 92"/>
+          <path d="M150 58v40M130 78h40M136 64l28 28M164 64l-28 28"/>
+        </g>
+        <rect x="30" y="116" width="120" height="10" fill="#c9a24a"/>
+        <text x="110" y="32" text-anchor="middle" font-family="Verdana" font-size="16" font-weight="bold" fill="#c9a24a">GPU</text>
+      </svg>
+      <figcaption>Graphics card with cooling fans.</figcaption>
+    </figure>
+    <div>
+      <h3>GPU – Graphics Processing Unit</h3>
+      <p>A GPU has thousands of small cores that work in parallel, which makes it ideal for rendering graphics and for machine learning. It can be built into the CPU (integrated) or be a separate card (dedicated).</p>
+      <p class="spec"><strong>What to evaluate:</strong> video memory (VRAM), number of cores, supported resolution, and cooling. Examples: NVIDIA GeForce RTX, AMD Radeon RX.</p>
+    </div>
+  </section>
+
+  <h2>Conclusion</h2>
+  <p>These four components work as a team: the CPU processes, the RAM provides fast working space, the SSD stores data permanently, and the GPU handles graphics. A slow part can bottleneck the others, so the right balance depends on how the computer will be used: office work needs a solid CPU, RAM, and SSD, while gaming and video editing also need a strong GPU.</p>
+</main>
+
+<footer>
+  <div class="wrap">Assignment 4 – Chapter 3: Evaluating Hardware</div>
+</footer>
+</body>
+</html>
